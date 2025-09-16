@@ -1,0 +1,135 @@
+body {
+  background-color: #0e0e0e;
+  color: #fff;
+  margin: 0;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+header h1::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(to right, #ffcc70, #ff8177);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 25px 0 30px;
+  color: #f5f5f5;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 2px;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+.main-header {
+  display: flex;
+  justify-content: center; /* จัดให้ h1 อยู่กลางแนวนอน */
+  align-items: center;
+  padding: 20px 0;
+}
+
+.main-header h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+  border-bottom: 3px solid #ffcc70; /* เส้นขีดสวย ๆ ใต้หัวข้อ */
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+/* เพิ่มต่อจาก style.css เดิม */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* ลดระยะห่างระหว่างการ์ด */
+  max-width: 1200px; /* จำกัดความกว้างรวมของ gallery */
+  margin: 0 auto; /* จัดให้อยู่ตรงกลางหน้าจอ */
+  padding: 0 20px 20px;
+  box-sizing: border-box;
+}
+
+.card {
+  background-color: #181818;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.6);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background-color: #000; /* ทำให้ภาพดูเหมือนอยู่ในกรอบ */
+  display: block;
+}
+
+.card-content {
+  padding: 12px; /* ลด padding ให้การ์ดดูเล็กลง */
+}
+
+.card h3 {
+  font-size: 1.1rem; /* ย่อขนาดหัวข้อ */
+  margin: 0 0 8px;
+  text-align: center;
+  color: #fff;
+}
+
+.card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: justify;
+  color: #ddd;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+

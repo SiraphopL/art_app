@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2 class="section-title">ผลงานศิลปะที่เลือก</h2>
+
+  <div class="gallery">
+    {% for art in artworks %}
+      <div class="card">
+        <img src="{{ art.image_url }}" alt="{{ art.title }}">
+        <div class="card-content">
+          <h3>{{ art.title }}</h3>
+          <p>{{ art.description }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
